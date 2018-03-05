@@ -1,4 +1,2 @@
 ## Portfolio
-
-
-## About
+Laravel based ReactJS SPA Portfolio
