@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('text');
             $table->string('url');
             $table->string('thumbnail_url');
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
