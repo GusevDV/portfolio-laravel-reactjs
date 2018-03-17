@@ -1,0 +1,25 @@
+.post-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width:1000px;
+}
+
+.post-item{
+  width: 90%;
+  margin-bottom: 20px;
+  @media(min-width: 768px) {
+    max-width:calc(50% - 20px);
+  }
+  @media(min-width: 576px) {
+    width: 80%;
+  }
+}
+
+
+.post-item img{
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
