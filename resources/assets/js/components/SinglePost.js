@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Axios from 'axios';
 
 class SinglePost extends Component{
@@ -6,20 +7,18 @@ class SinglePost extends Component{
     super(props);
 
     this.state = {
-      id: props.match.params.id,
       data: [],
     }
   }
 
   componentDidMount(){
     this.props.onLoadingChange();
-    Axios.get('/api/post/' + this.state.id)
+    Axios.get('/api/post/' + this.props.match.params.id)
       .then(response => {
         return response.data;
       })
       .then(data => {
         this.setState({data});
-
       })
       .finally(() => {
         this.props.onLoadingChange()
@@ -45,9 +44,7 @@ class SinglePost extends Component{
           </div>
         )
       }
-
     }
-
 
     return(
       <main className="post-container">
@@ -60,5 +57,10 @@ class SinglePost extends Component{
     )
   }
 }
+
+SinglePost.propTypes = {
+  onLoadingChange: PropTypes.func.isRequired,
+  match: PropTypes.object.isRequired,
+};
 
 export default SinglePost;

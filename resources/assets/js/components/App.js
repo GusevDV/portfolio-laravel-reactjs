@@ -7,11 +7,11 @@ import Header from './Header';
 import Posts from './Posts';
 import SinglePost from './SinglePost';
 import Load from './Load';
+import Footer from './Footer';
 
 class App extends Component {
   constructor(props){
     super(props)
-
     this.state = {
       loading: false,
     }
@@ -34,6 +34,7 @@ class App extends Component {
             <SinglePost onLoadingChange={this.handleLoadingChange} {...props} />
           )} />
         </Switch>
+        <Footer />
       </div>
     );
   }

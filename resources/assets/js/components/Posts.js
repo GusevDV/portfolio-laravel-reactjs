@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import {Link} from 'react-router-dom'
-
+import PropTypes from 'prop-types';
 
 class Posts extends Component {
 
@@ -44,8 +44,10 @@ class Posts extends Component {
       </main>
     );
 
-
   }
 }
+Posts.propTypes = {
+  onLoadingChange: PropTypes.func.isRequired,
+};
 
 export default Posts;
