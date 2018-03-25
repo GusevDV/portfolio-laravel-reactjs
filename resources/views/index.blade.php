@@ -5,22 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
         <link rel='stylesheet' href="{{ mix('css/app.css') }}">
-        <title>Laravel</title>
+        <title>Portfolio</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                margin: 0;
-            }
-
-        </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">

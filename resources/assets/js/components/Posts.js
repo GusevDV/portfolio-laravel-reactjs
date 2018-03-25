@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import {Link} from 'react-router-dom'
+
 
 class Posts extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      posts: []
+      posts: [],
     }
   }
-
   componentDidMount(){
+    this.props.onLoadingChange();
     Axios.get('/api/post/')
       .then(response => {
         return response.data;
@@ -18,7 +20,9 @@ class Posts extends Component {
       .then(posts => {
         this.setState({posts});
       })
-
+      .finally(() => {
+        this.props.onLoadingChange();
+      });
   }
 
   render() {
@@ -26,11 +30,13 @@ class Posts extends Component {
     const postsList = posts.map(post => {
       return (
         <article key={post.id} className="post-item">
-          <img src={post.thumbnail_url} alt={post.title}  />
+          <Link to={`/post/${post.id}`}>
+            <img src={post.thumbnail_url} alt={post.title}  />
+          </Link>
         </article>
+
       );
     });
-    console.log(postsList)
 
     return (
       <main className='post-container'>

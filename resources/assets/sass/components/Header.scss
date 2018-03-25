@@ -2,4 +2,18 @@
   display: block;
   width: 100%;
   text-align: center;
+  background: $header-bg;
+  border-bottom: 1px solid $header-border-color;
+  box-sizing: border-box;
+  .site-name{
+    display: block;
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  a{
+    text-decoration: none;
+    color: #222;
+    text-transform: uppercase;
+  }
 }

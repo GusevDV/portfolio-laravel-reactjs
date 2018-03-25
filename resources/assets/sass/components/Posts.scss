@@ -1,14 +1,6 @@
-.post-container{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 20px auto;
-  max-width:1000px;
-}
-
 .post-item{
   width: 90%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   @media(min-width: 768px) {
     max-width:calc(50% - 20px);
   }
@@ -17,9 +9,16 @@
   }
 }
 
-
 .post-item img{
   width: 100%;
   height: auto;
   vertical-align: middle;
+  box-sizing: border-box;
+  border:8px solid $img-border-color;
+  box-shadow: $img-box-shadow;
+  transition: box-shadow 200ms;
+  &:hover{
+    box-shadow: $img-box-shadow-hover;
+  }
+
 }

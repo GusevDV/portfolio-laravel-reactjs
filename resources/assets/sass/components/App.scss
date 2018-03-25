@@ -1,0 +1,23 @@
+html {
+    overflow-y: scroll;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  background: $body-bg;
+  margin: 0;
+  padding: 0;
+}
+.post-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 35px auto;
+  max-width:1000px;
+
+  @media(min-width: 768px) {
+    justify-content: space-between;
+  }
+}
+.center{
+  text-align: center;
+}
