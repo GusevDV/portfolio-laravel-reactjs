@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::all();
+        return Post::select('id', 'thumbnail_url')->where('active', 1)->get();
     }
 
     /**
@@ -33,20 +33,26 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $post = Post::create($request->all());
-        return response()->json($post, 201);
-    }
+    // public function store(Request $request)
+    // {
+    //     $post = Post::create($request->all());
+    //     return response()->json($post, 201);
+    // }
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-      return $post;
+      $post = Post::find($id);
+
+      if (! $post) {
+        return response()->json(['message' => 'Post not found'], 404);
+      }
+
+      return response()->json($post, 200);
     }
 
 
@@ -57,11 +63,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $post = Post::find($id)->update($request->all());
-        return response()->json($post, 200);
-    }
+    // public function update(Request $request, $id)
+    // {
+    //     $post = Post::find($id)->update($request->all());
+    //     return response()->json($post, 200);
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -69,10 +75,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-       $post = Post::find($id);
-       $post->delete();
-       return response()->json(null, 204);
-    }
+    // public function destroy($id)
+    // {
+    //    $post = Post::find($id);
+    //    $post->delete();
+    //    return response()->json(null, 204);
+    // }
 }
