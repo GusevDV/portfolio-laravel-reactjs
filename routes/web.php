@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/{any}', function () {
-    return view('index');
-})->where('any', '.*');
+Route::get('/{all}', 'HomeController@index')->where('all', '.*');
