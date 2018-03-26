@@ -24,7 +24,6 @@ class Posts extends Component {
         this.props.onLoadingChange();
       });
   }
-
   render() {
     const { posts } = this.state;
     const postsList = posts.map(post => {

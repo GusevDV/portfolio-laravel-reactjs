@@ -3,7 +3,7 @@ import React from 'react';
 function Footer(){
   return (
     <footer className="footer">
-        <span>Footer 2018</span>
+        <span>Portfolio © 2018</span>
     </footer>
   )
 }

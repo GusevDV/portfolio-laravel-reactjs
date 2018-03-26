@@ -58398,7 +58398,7 @@ function Footer() {
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "span",
       null,
-      "Footer 2018"
+      "Portfolio \xA9 2018"
     )
   );
 }

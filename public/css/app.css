@@ -189,3 +189,9 @@ body {
           justify-content: center;
 }
 
+.footer span {
+  margin-top: 15px;
+  color: #777;
+  font-size: 0.8rem;
+}
+
