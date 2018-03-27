@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import DocumentMeta from 'react-document-meta';
 import Axios from 'axios';
 
 class SinglePost extends Component{
@@ -28,6 +29,10 @@ class SinglePost extends Component{
   render() {
     const {title, text, url} = this.state.data;
 
+    const meta = {
+      title: title,
+    }
+
     function displayUrl() {
 
       if (url) {
@@ -47,6 +52,7 @@ class SinglePost extends Component{
     }
 
     return(
+      <DocumentMeta {...meta}>
       <main className="post-container">
         <article className="post-single">
           <h1 className="post-title">{title}</h1>
@@ -54,6 +60,7 @@ class SinglePost extends Component{
           {displayUrl()}
         </article>
       </main>
+    </DocumentMeta>
     )
   }
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Route, Switch} from 'react-router-dom'
+import DocumentMeta from 'react-document-meta';
 import Axios from 'axios';
 
 import Header from './Header';
@@ -22,8 +23,14 @@ class App extends Component {
   }
 
   render(){
+
+    const meta = {
+      title: 'Portfolio',
+    }
+
     return(
       <div>
+        <DocumentMeta {...meta}>
         <Header />
         <Load loading={this.state.loading}/>
         <Switch>
@@ -35,6 +42,7 @@ class App extends Component {
           )} />
         </Switch>
         <Footer />
+        </DocumentMeta>
       </div>
     );
   }
