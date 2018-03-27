@@ -26,6 +26,7 @@ class Posts extends Component {
   }
   render() {
     const { posts } = this.state;
+
     const postsList = posts.map(post => {
       return (
         <article key={post.id} className="post-item">
