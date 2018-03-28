@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types';
 
@@ -13,16 +13,10 @@ class Posts extends Component {
   }
   componentDidMount(){
     this.props.onLoadingChange();
-    Axios.get('/api/post/')
-      .then(response => {
-        return response.data;
-      })
-      .then(posts => {
-        this.setState({posts});
-      })
-      .finally(() => {
-        this.props.onLoadingChange();
-      });
+    axios.get('/api/post/')
+      .then(response => response.data)
+      .then(posts => this.setState({posts}))
+      .finally(() => this.props.onLoadingChange());
   }
   render() {
     const { posts } = this.state;
