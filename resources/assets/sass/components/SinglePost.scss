@@ -1,5 +1,9 @@
 .post-single{
-  width: 100%;
+  width: 95%;
+  padding: 0 10px;
+  @media(min-width: 768px) {
+    width: 100%;
+  }
   a{
     color: $link-color;
     text-decoration: underline;
@@ -15,13 +19,13 @@
     line-height: 0.8em;
   }
   img{
-    width: 100%;
+    width: 95%;
     height: auto;
     vertical-align: middle;
     border:8px solid $img-border-color;
     box-shadow: $img-box-shadow;
     transition: box-shadow 200ms;
-    margin: 5px 0;
+    margin: 5px auto;
     &:hover{
       box-shadow: $img-box-shadow-hover;
     }

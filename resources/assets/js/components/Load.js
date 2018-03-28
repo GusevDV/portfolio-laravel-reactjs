@@ -1,12 +1,9 @@
 import React from 'react';
 
 function Load(props) {
-  const loading = props.loading;
-  if (loading) {
-    return <div className='async-spinner'></div>
-  }
-  return (null);
-
+  return (
+    props.loading ? <div className='async-spinner'></div> : null
+  );
 }
 
 export default Load;

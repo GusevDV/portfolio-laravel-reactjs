@@ -12,10 +12,14 @@ body{
   justify-content: center;
   flex-wrap: wrap;
   margin: 35px auto;
-  max-width:1000px;
+
   min-height: calc(100vh - 180px);
   @media(min-width: 768px) {
     justify-content: space-between;
+    max-width:700px;
+  }
+  @media(min-width: 992px) {
+    max-width:1000px;
   }
 }
 .center{

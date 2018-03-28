@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Route, Switch} from 'react-router-dom'
 import DocumentMeta from 'react-document-meta';
-import Axios from 'axios';
 
 import Header from './Header';
 import Posts from './Posts';
