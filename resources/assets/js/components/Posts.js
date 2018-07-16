@@ -16,6 +16,7 @@ class Posts extends Component {
     axios.get('/api/post/')
       .then(response => response.data)
       .then(posts => this.setState({posts}))
+      .catch(error => console.log(error))
       .finally(() => this.props.onLoadingChange());
   }
   render() {

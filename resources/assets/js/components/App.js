@@ -6,6 +6,7 @@ import DocumentMeta from 'react-document-meta';
 import Header from './Header';
 import Posts from './Posts';
 import SinglePost from './SinglePost';
+import Login from './Login';
 import Load from './Load';
 import Footer from './Footer';
 
@@ -38,6 +39,9 @@ class App extends Component {
           )} />
           <Route path='/post/:id' render={(props) => (
             <SinglePost onLoadingChange={this.handleLoadingChange} {...props} />
+          )} />
+          <Route path='/login' render={(props) => (
+            <Login/>
           )} />
         </Switch>
         <Footer />
