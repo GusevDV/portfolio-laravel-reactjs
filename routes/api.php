@@ -19,7 +19,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/post', 'Api\PostController@index');
 Route::get('/post/{post}', 'Api\PostController@show');
-
-Route::post('/post', 'Api\PostController@store');
-Route::put('/post/{id}', 'Api\PostController@update');
-Route::delete('/post/{id}', 'Api\PostController@destroy');
