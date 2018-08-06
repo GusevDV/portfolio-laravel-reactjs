@@ -13,13 +13,28 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/users', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/post', 'Api\PostController@index');
-Route::get('/post/{post}', 'Api\PostController@show');
 
-Route::post('/post', 'Api\PostController@store');
-Route::put('/post/{id}', 'Api\PostController@update');
-Route::delete('/post/{id}', 'Api\PostController@destroy');
+Route::post('register', 'APIRegisterController@register');
+Route::post('login', 'APILoginController@login');
+
+
+Route::group(['middleware' => ['web']], function () {
+/*     Route::post('login','Auth\LoginController@login');
+    Route::post('register','Auth\RegisterController@register');
+    Route::post('logout','Auth\LoginController@logout');
+    Route::post('password/email','Auth\ForgotPasswordController@sendResetLinkEmail');
+    Route::post('password/reset','Auth\ResetPasswordController@reset'); */
+
+    Route::get('/post', 'Api\PostController@index');
+    Route::get('/post/{post}', 'Api\PostController@show');
+    Route::post('/post', 'Api\PostController@store');
+    Route::put('/post/{id}', 'Api\PostController@update');
+    Route::delete('/post/{id}', 'Api\PostController@destroy');
+});
+
+
+
