@@ -17,18 +17,14 @@ Route::middleware('auth:api')->get('/users', function (Request $request) {
     return $request->user();
 });
 
-
 Route::post('register', 'APIRegisterController@register');
 Route::post('login', 'APILoginController@login');
 
+Route::group(['middleware' => ['jwt.auth']], function(){
+    //auth routes
+});
 
 Route::group(['middleware' => ['web']], function () {
-/*     Route::post('login','Auth\LoginController@login');
-    Route::post('register','Auth\RegisterController@register');
-    Route::post('logout','Auth\LoginController@logout');
-    Route::post('password/email','Auth\ForgotPasswordController@sendResetLinkEmail');
-    Route::post('password/reset','Auth\ResetPasswordController@reset'); */
-
     Route::get('/post', 'Api\PostController@index');
     Route::get('/post/{post}', 'Api\PostController@show');
     Route::post('/post', 'Api\PostController@store');

@@ -25,14 +25,11 @@ class APIRegisterController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => bcrypt($request->get('password')),
-            'api_token' => '',
         ]);
         
+        $user = User::first();
+        
         $token = JWTAuth::fromUser($user);
-
-        $user->api_token = $token;
-
-        $user->save();
         
         return Response::json(compact('token'));
     }
